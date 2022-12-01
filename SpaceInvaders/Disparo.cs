@@ -6,15 +6,12 @@ namespace SpaceInvaders
     {
         private bool esAlien = true;
         private System.Timers.Timer timer;
+
         private PictureBox pictureBox = new PictureBox();
-        //private PictureBox pictureBoxAlien = new PictureBox();
 
         private PictureBox pbNave;
         private ProgressBar vida;
-
-        private int contador = 0;
-
-
+        private Form form2;
 
         private string basepath = Environment.CurrentDirectory;
         private const string relativePath = "../../../assets/";
@@ -23,15 +20,15 @@ namespace SpaceInvaders
         public int[] posicion { get; set; }
         public int[] tamaño { get; set; }
 
-        public Disparo(int daño, string imagen, int[] posicion, int[] tamaño, bool esAlien)
+        public Disparo(int daño, string imagen, int[] posicion, int[] tamaño, bool esAlien, Form form2)
         {
             this.esAlien = esAlien;
             this.daño = daño;
             this.imagen = Path.GetFullPath(relativePath + imagen, basepath);
             this.posicion = posicion;
             this.tamaño = tamaño;
+            this.form2 = form2;
         }
-        
         public PictureBox crearDisparo(PictureBox pbNave, ProgressBar pbVida)
         {
             pictureBox.Image = Image.FromFile(imagen);
@@ -43,7 +40,6 @@ namespace SpaceInvaders
 
             return pictureBox;
         }
-
         private void disparar()
         {
             if (!esAlien)
@@ -56,13 +52,11 @@ namespace SpaceInvaders
                 pictureBox.Location = new Point(pictureBox.Location.X, pictureBox.Location.Y + 10);
                 matarNave();
             }
-
         }
         private void disparar(Object source, ElapsedEventArgs e)
         {
             disparar();
         }
-
         private void matarNave()
         {
             if (pictureBox.Bounds.IntersectsWith(this.pbNave.Bounds)){
@@ -75,12 +69,15 @@ namespace SpaceInvaders
 
                 if (this.vida.Value <= 0)
                 {
+                    this.pictureBox.Location = new Point(0, 0);
+                    this.vida.Value = 100;
+                    SpaceComponent.contador = 0;
+                    form2.Close();
                     MessageBox.Show("Has sido eliminado");
                 }
             }
            
         }
-
         private void matarInvader()
         {
             foreach(SpaceComponent invader in SpaceComponent.listaInvaders)
@@ -99,20 +96,19 @@ namespace SpaceInvaders
                         pictureBox.Visible = false;
                         invader.pictureBox.Visible = false;
                         invader.pictureBox.Location = new Point(0, 0);
+                        this.vida.Value = 100;
+                        SpaceComponent.contador = 0;
+                        form2.Close();
                         MessageBox.Show("Ganaste");
                     }
-
                     timer.Stop();
-                    
                 }
 
             }
         }
-
         public void crearTimer()
         {
             timer = new(40);
-
             timer.Elapsed += disparar;
             timer.AutoReset = true;
             timer.Enabled = true;

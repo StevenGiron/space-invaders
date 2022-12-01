@@ -13,7 +13,6 @@ namespace SpaceInvaders
         public Nave(int vida, int velocidad, string imagen, int[] posicion, int[] tamaño) : base(vida, velocidad, imagen, posicion, tamaño)
         {
         }
-
         public static int[] generarPosicionNave(int x, int y)
         {
             int[] posicion = new int[2];
@@ -21,7 +20,6 @@ namespace SpaceInvaders
             posicion[1] = y;
             return posicion;
         }
-
         public void MoverNave(string sentido, PictureBox pictureBox, Nave nave)
         {
             switch (sentido)
@@ -40,7 +38,6 @@ namespace SpaceInvaders
                     break;
             }
         }
-
 
     }
 }

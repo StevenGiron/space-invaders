@@ -11,9 +11,9 @@ namespace SpaceInvaders
 {
     internal class SpaceComponent
     {
+        public static int  contador = 0;
         public static List<SpaceComponent> listaInvaders = new List<SpaceComponent>();
         public PictureBox pictureBox = new ();
-        public static int  contador = 0;
 
         private static System.Timers.Timer timer;
         private bool movimiento = true;
@@ -86,8 +86,6 @@ namespace SpaceInvaders
                 movimiento = true;
             }
         }
-
-
         public void crearTimer()
         {
             timer = new(200);

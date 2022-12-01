@@ -16,3 +16,5 @@ C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\S
 C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\SpaceInvaders\SpaceInvaders\obj\Debug\net6.0-windows\SpaceInvaders.pdb
 C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\SpaceInvaders\SpaceInvaders\obj\Debug\net6.0-windows\SpaceInvaders.genruntimeconfig.cache
 C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\SpaceInvaders\SpaceInvaders\obj\Debug\net6.0-windows\ref\SpaceInvaders.dll
+C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\SpaceInvaders\SpaceInvaders\obj\Debug\net6.0-windows\SpaceInvaders.Form2.resources
+C:\Users\Steven\Desktop\Tec. Des. Software\Segundo semestre\Fundamentos de POO\SpaceInvaders\SpaceInvaders\obj\Debug\net6.0-windows\SpaceInvaders.Form3.resources
