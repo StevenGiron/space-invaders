@@ -22,6 +22,7 @@ namespace SpaceInvaders
             {
                 Invaders1 invaders1 = new(3, 0, "invader3.gif", Invaders1.generarPosicion(i, 137), Invaders1.generarTamaño(87, 80));
                 Controls.Add(invaders1.crearComponente());
+                SpaceComponent.listaInvaders.Add(invaders1);
                 System.Diagnostics.Debug.WriteLine("URL INVADER11" + invaders1.imagen);
             }
         }
@@ -31,6 +32,7 @@ namespace SpaceInvaders
             {
                 Invaders2 invaders2 = new(3, 0, "invader2.gif", Invaders2.generarPosicion(i, 244), Invaders2.generarTamaño(88, 80));
                 Controls.Add(invaders2.crearComponente());
+                SpaceComponent.listaInvaders.Add(invaders2);
             }
         }
         private void generarInvaders3()
@@ -39,6 +41,7 @@ namespace SpaceInvaders
             {
                 Invaders3 invaders3 = new(3, 0, "invader1.gif", Invaders3.generarPosicion(i, 351), Invaders2.generarTamaño(121, 80));
                 Controls.Add(invaders3.crearComponente());
+                SpaceComponent.listaInvaders.Add(invaders3);
             }
         }
         private void generarBoss()
@@ -46,6 +49,7 @@ namespace SpaceInvaders
             Boss boss = new(3, 15, "boss.gif", Boss.generarPosicionBoss(160, 12), Boss.generarTamaño(100, 102));
             boss.crearTimer();
             Controls.Add(boss.crearComponente());
+            SpaceComponent.listaInvaders.Add(boss);
         }
 
         private void generarNave()

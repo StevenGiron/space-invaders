@@ -5,12 +5,14 @@ namespace SpaceInvaders
     internal class Disparo
     {
         private bool esAlien = true;
-        private static System.Timers.Timer timer;
+        private System.Timers.Timer timer;
         private PictureBox pictureBox = new PictureBox();
-        private PictureBox pictureBoxAlien = new PictureBox();
+        //private PictureBox pictureBoxAlien = new PictureBox();
 
         private PictureBox pbNave;
         private ProgressBar vida;
+
+        private int contador = 0;
 
 
 
@@ -47,6 +49,7 @@ namespace SpaceInvaders
             if (!esAlien)
             {
                 pictureBox.Location = new Point(pictureBox.Location.X, pictureBox.Location.Y - 10);
+                matarInvader();
             }
             else
             {
@@ -63,10 +66,11 @@ namespace SpaceInvaders
         private void matarNave()
         {
             if (pictureBox.Bounds.IntersectsWith(this.pbNave.Bounds)){
-                pictureBox.Visible = false;
 
-                this.vida.Value -= 50;
+                pictureBox.Visible = false;
                 this.pictureBox.Location = new Point(0, 0);
+                this.vida.Value -= 50;
+                timer.Stop();
 
 
                 if (this.vida.Value <= 0)
@@ -75,6 +79,34 @@ namespace SpaceInvaders
                 }
             }
            
+        }
+
+        private void matarInvader()
+        {
+            foreach(SpaceComponent invader in SpaceComponent.listaInvaders)
+            {
+                if (pictureBox.Bounds.IntersectsWith(invader.pictureBox.Bounds))
+                {
+                    if(SpaceComponent.contador < SpaceComponent.listaInvaders.Count - 1)
+                    {
+                        pictureBox.Visible = false;
+                        invader.pictureBox.Visible = false;
+                        invader.pictureBox.Location = new Point(0, 0);
+                        SpaceComponent.contador += 1;
+                    }
+                    else
+                    {
+                        pictureBox.Visible = false;
+                        invader.pictureBox.Visible = false;
+                        invader.pictureBox.Location = new Point(0, 0);
+                        MessageBox.Show("Ganaste");
+                    }
+
+                    timer.Stop();
+                    
+                }
+
+            }
         }
 
         public void crearTimer()
