@@ -9,6 +9,7 @@ namespace SpaceInvaders
 
         private PictureBox pictureBox = new PictureBox();
 
+        private Label puntuacion;
         private PictureBox pbNave;
         private ProgressBar vida;
         private Form form2;
@@ -29,13 +30,14 @@ namespace SpaceInvaders
             this.tamaño = tamaño;
             this.form2 = form2;
         }
-        public PictureBox crearDisparo(PictureBox pbNave, ProgressBar pbVida)
+        public PictureBox crearDisparo(PictureBox pbNave, ProgressBar pbVida, Label puntuacion)
         {
             pictureBox.Image = Image.FromFile(imagen);
             pictureBox.Location = new System.Drawing.Point(posicion[0], posicion[1]);
             pictureBox.Size = new System.Drawing.Size(tamaño[0], tamaño[1]);
             this.pbNave = pbNave;
             this.vida = pbVida;
+            this.puntuacion = puntuacion;
             this.crearTimer();
 
             return pictureBox;
@@ -55,6 +57,7 @@ namespace SpaceInvaders
         }
         private void disparar(Object source, ElapsedEventArgs e)
         {
+
             disparar();
         }
         private void matarNave()
@@ -66,12 +69,12 @@ namespace SpaceInvaders
                 this.vida.Value -= 50;
                 timer.Stop();
 
-
                 if (this.vida.Value <= 0)
                 {
                     this.pictureBox.Location = new Point(0, 0);
                     this.vida.Value = 100;
                     SpaceComponent.contador = 0;
+                    puntuacion.Text = "0";
                     form2.Close();
                     Form3 form3 = new Form3();
                     form3.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "gameOver.jpg", basepath));
@@ -86,6 +89,8 @@ namespace SpaceInvaders
             {
                 if (pictureBox.Bounds.IntersectsWith(invader.pictureBox.Bounds))
                 {
+                    puntuacion.Text = (int.Parse(puntuacion.Text) + 10).ToString();
+
                     if(SpaceComponent.contador < SpaceComponent.listaInvaders.Count - 1)
                     {
                         pictureBox.Visible = false;
@@ -105,6 +110,8 @@ namespace SpaceInvaders
                         Form3 form3 = new Form3();
                         form3.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "win.jpg", basepath));
                         form3.ShowDialog();
+                        puntuacion.Text = "0";
+                        
                     }
                     timer.Stop();
                 }

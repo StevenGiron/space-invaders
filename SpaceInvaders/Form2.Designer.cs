@@ -46,11 +46,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MV Boli", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(869, 909);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 26);
+            this.label2.Size = new System.Drawing.Size(43, 26);
             this.label2.TabIndex = 28;
             this.label2.Text = "HP";
             // 
@@ -66,22 +66,22 @@
             // lblPuntuación
             // 
             this.lblPuntuación.AutoSize = true;
-            this.lblPuntuación.Font = new System.Drawing.Font("MV Boli", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPuntuación.Font = new System.Drawing.Font("Showcard Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPuntuación.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPuntuación.Location = new System.Drawing.Point(162, 912);
+            this.lblPuntuación.Location = new System.Drawing.Point(175, 912);
             this.lblPuntuación.Name = "lblPuntuación";
-            this.lblPuntuación.Size = new System.Drawing.Size(27, 26);
+            this.lblPuntuación.Size = new System.Drawing.Size(25, 26);
             this.lblPuntuación.TabIndex = 26;
             this.lblPuntuación.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(93, 912);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 26);
+            this.label1.Size = new System.Drawing.Size(92, 26);
             this.label1.TabIndex = 25;
             this.label1.Text = "Score: ";
             // 

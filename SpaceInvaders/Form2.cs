@@ -72,7 +72,7 @@ namespace SpaceInvaders
             posicionDisparo[0] = pbNave.Location.X + 40;
             posicionDisparo[1] = 738;
             Disparo disparo = new(1, "disparo.png", posicionDisparo, SpaceComponent.generarTamaño(20, 55), false, this);
-            Controls.Add(disparo.crearDisparo(pbNave, pbarSalud));
+            Controls.Add(disparo.crearDisparo(pbNave, pbarSalud, lblPuntuación));
         }
         private void generarDisparoAlien()
         {
@@ -80,7 +80,7 @@ namespace SpaceInvaders
             posicionDisparo[0] = new Random().Next(150, 950);
             posicionDisparo[1] = 120;
             Disparo disparoAlien = new(1, "disparoAlien.png", posicionDisparo, SpaceComponent.generarTamaño(32, 62), true, this);
-            Controls.Add(disparoAlien.crearDisparo(pbNave, pbarSalud));
+            Controls.Add(disparoAlien.crearDisparo(pbNave, pbarSalud, lblPuntuación));
         }
 
         private void Form2_KeyDown(object sender, KeyEventArgs e)

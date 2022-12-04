@@ -8,12 +8,18 @@ namespace SpaceInvaders
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            form2.ShowDialog();
+            form2.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
