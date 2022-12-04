@@ -73,7 +73,9 @@ namespace SpaceInvaders
                     this.vida.Value = 100;
                     SpaceComponent.contador = 0;
                     form2.Close();
-                    MessageBox.Show("Has sido eliminado");
+                    Form3 form3 = new Form3();
+                    form3.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "gameOver.jpg", basepath));
+                    form3.ShowDialog();
                 }
             }
            
@@ -98,8 +100,11 @@ namespace SpaceInvaders
                         invader.pictureBox.Location = new Point(0, 0);
                         this.vida.Value = 100;
                         SpaceComponent.contador = 0;
+                        SpaceComponent.listaInvaders.Clear();
                         form2.Close();
-                        MessageBox.Show("Ganaste");
+                        Form3 form3 = new Form3();
+                        form3.BackgroundImage = Image.FromFile(Path.GetFullPath(relativePath + "win.jpg", basepath));
+                        form3.ShowDialog();
                     }
                     timer.Stop();
                 }
